@@ -1,7 +1,7 @@
 'use client'; // Necessário para interatividade no Next.js
 
 import { useState } from 'react';
-import './globals.css';
+
 
 export default function CounterPage() {
   const [count, setCount] = useState(0); // Estado do contador
