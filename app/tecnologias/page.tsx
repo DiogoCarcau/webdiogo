@@ -1,7 +1,8 @@
-import React from 'react'
+import React from "react";
 
-export default function tecnologias() {
-  return (
-    <div>tecnologias</div>
-  )
-}
+
+const tecnologias = () => {
+  return <div>tecnologias</div>;
+};
+
+export default tecnologias;

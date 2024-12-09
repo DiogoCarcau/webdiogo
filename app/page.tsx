@@ -11,7 +11,7 @@ export default function HomePage() {
       </p>
 
       {/* Link para a página Counter */}
-      <Link href="/counter">Ir para a página Counter</Link>
+      <Link href="/counter">Ir para a página do count</Link>
     </>
   );
 }

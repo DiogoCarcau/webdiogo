@@ -44,3 +44,19 @@ main {
   /* Fundo */
   background: whitesmoke;
 }
+
+a {
+  color: #ededed; 
+  text-decoration: none; 
+}
+
+a:hover,
+a:focus {
+  color: #cccccc; /* Cor mais clara em hover/foco */
+}
+
+.active {
+  color: #cccccc;
+}
+
+
