@@ -22,7 +22,6 @@ export default function Municipalities() {
             {municipalities.map((municipality) => (
                 <MunicipalityCard
                     key={municipality.id}
-                    id={municipality.id}
                     name={municipality.name}
                     district_name={municipality.district_name}
                 />
