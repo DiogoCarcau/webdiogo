@@ -3,22 +3,16 @@
 @tailwind utilities;
 
 body {
-  /* Box Model */
   margin: 0;
   padding: 0;
-
-  /* Layout e Posicionamento */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* Fundo e Estética */
-  background: url('https://img.freepik.com/vetores-gratis/circulo-azul-abstrato-na-tecnologia-de-fundo-preto_1142-9770.jpg?semt=ais_hybrid');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;
+  background: url('https://img.freepik.com/vetores-gratis/circulo-azul-abstrato-na-tecnologia-de-fundo-preto_1142-9770.jpg?semt=ais_hybrid') no-repeat center center fixed;
+  background-size: cover;
 }
+
 
 .home {
   /* Reset e Box Model */
@@ -31,3 +25,10 @@ body {
   /* Fundo */
   background: whitesmoke;
 }
+
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+  }
+}
+
