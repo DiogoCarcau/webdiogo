@@ -8,31 +8,26 @@ export default function Card({
   rating,
 }: Tecnologia) {
   return (
-    <section className="bg-[var(--background)] border rounded-xl shadow-xl hover:shadow-2xl transition-transform duration-300 hover:-translate-y-2 flex flex-col">
-      {/* Imagem */}
-      <article className="overflow-hidden rounded-t-xl pt-4">
+    <section className="bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-200 hover:scale-105 flex flex-col">
+      <article className="overflow-hidden rounded-t-2xl p-4">
         <img
           src={image}
           alt={title}
-          className="w-full h-36 object-contain"
+          className="w-full h-40 object-contain"
         />
       </article>
-
-      {/* Corpo */}
       <article className="p-4 flex-grow">
-        <h2 className="text-lg font-bold" style={{ color: "var(--foreground)" }}>
+        <h2 className="text-lg font-bold text-gray-800">
           {title}
         </h2>
-        <p className="text-sm" style={{ color: "var(--primary-light)" }}>
+        <p className="text-sm text-gray-700">
           {description}
         </p>
       </article>
-
-      {/* Rodapé */}
-      <article className="p-4 border-t flex justify-between items-center">
-        <span className="text-sm text-yellow-500">
+      <article className="p-4 border-t border-gray-200 flex justify-between items-center">
+        <article className="text-sm text-gray-800 flex items-center">
           {rating}⭐
-        </span>
+        </article>
       </article>
     </section>
   );

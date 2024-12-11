@@ -1,30 +1,23 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import useSWR from 'swr';
 import Card from './card'; 
 import { Product } from '../models/interface';
 
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
 export default function Page() {
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const { data, error, isLoading } = useSWR<Product[], Error>('api/products', fetcher);
+  const { data, error, isLoading } = useSWR<Product[]>('https://deisishop.pythonanywhere.com/products/', fetcher);
 
-  useEffect(() => {
-    document.body.classList.add('home-body');
-
-    return () => {
-      document.body.classList.remove('home-body');
-    };
-  }, []);
-
-  if (error) return <>Failed to load</>;
-  if (isLoading) return <>Loading...</>;
-  if (!data) return <>No data available</>;
+  if (error) return <div className="text-center text-red-500 mt-8">Erro ao carregar os produtos.</div>;
+  if (isLoading) return <div className="text-center text-gray-500 mt-8">Carregando...</div>;
+  if (!data) return <div className="text-center text-gray-500 mt-8">Nenhum dado disponível.</div>;
 
   return (
-    <section className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Produtos</h1>
-      <article className="gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="container mx-auto py-8">
+      <h1 className="text-4xl font-bold text-white mb-8 text-center">Produtos</h1> {/* Alterado para text-white */}
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {data.map((product) => (
           <Card
             key={product.id}
@@ -37,7 +30,7 @@ export default function Page() {
             rating={product.rating}
           />
         ))}
-      </article>
-    </section>
+      </div>
+    </div>
   );
 }

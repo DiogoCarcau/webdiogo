@@ -16,13 +16,13 @@ export default function HomePage() {
 
   return (
     <main className="mx-auto my-8 p-6 w-[80%] max-w-[600px] bg-white rounded-lg shadow-lg">
-      <h1 className="text-4xl font-bold text-gray-800 text-center mb-4">
+      <h1 className="text-4xl font-bold text-white-800 text-center mb-4">
         React e Next.js
       </h1>
       <p className="text-gray-600 mb-6 text-center">
         Seja Bem-Vindo à minha aplicação em React e Next.js, estas são algumas
         das tecnologias mais utilizadas e vou dar um cheirinho de como brilhar
-        nestas tecnologias!
+        nestas tecnologias!💻✨
       </p>
 
       <div className="text-center">
