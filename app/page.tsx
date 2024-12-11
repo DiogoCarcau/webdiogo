@@ -26,8 +26,9 @@ export default function HomePage() {
       </p>
 
       <div className="text-center">
-        <Link href="/counter" className="text-blue-600 font-bold underline hover:text-blue-800">
-          Ir para a página do Count
+        <Link href="/counter" className="flex items-center justify-center gap-2 text-red-500 font-bold hover:text-red-700">
+          <span>Clique para ir à página do Count</span>
+          <img src="/tecnologias/seta.avif" alt="Seta" className="w-6 h-6" />
         </Link>
       </div>
     </main>
