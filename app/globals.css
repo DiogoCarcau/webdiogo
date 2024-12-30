@@ -13,16 +13,12 @@ body {
   background-size: cover;
 }
 
-
 .home {
-  /* Reset e Box Model */
   width: 320px;
   height: 450px;
   padding: 20px;
   border-radius: 20px;
   overflow-y: auto;
-
-  /* Fundo */
   background: whitesmoke;
 }
 
@@ -32,3 +28,44 @@ body {
   }
 }
 
+@keyframes neon {
+  0% {
+    color: rgb(227, 178, 159);
+  }
+  15% {
+    color: rgb(236, 73, 8);
+  }
+  20% {
+    color: rgb(227, 178, 159);
+  }
+  25% {
+    color: rgb(149, 222, 222);
+  }
+  40% {
+    color: rgb(29, 160, 160);
+  }
+  45% {
+    color: rgb(149, 222, 222);
+  }
+  50% {
+    color: rgb(196, 149, 239);
+  }
+  65% {
+    color: rgb(114, 48, 177);
+  }
+  70% {
+    color: rgb(196, 149, 239);
+  }
+  75% {
+    color: rgb(150, 232, 222);
+  }
+  90% {
+    color: rgb(44, 169, 154);
+  }
+  95% {
+    color: rgb(150, 232, 222);
+  }
+  100% {
+    color: rgb(227, 178, 159);
+  }
+}

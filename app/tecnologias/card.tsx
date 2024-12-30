@@ -1,6 +1,7 @@
 import React from "react";
 import { Tecnologia } from "../models/interface";
 
+
 export default function Card({
   title,
   image,
