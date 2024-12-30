@@ -11,20 +11,19 @@ export interface Product {
   };
 }
 
+export interface FilterProps {
+  onCategoryChange: (category: string) => void;
+  onSortChange: (sortType: string) => void;
+  onSearchChange: (search: string) => void;
+  searchValue: string;
+}
+
 export interface Tecnologia {
   id: number;
   title: string;
   image: string;
   description: string;
   rating: number;
-}
-
-// SearchBar
-export interface FilterProps {
-  onCategoryChange: (category: string) => void;
-  onSortChange: (sortType: string) => void;
-  onSearchChange: (search: string) => void;
-  searchValue: string;
 }
 
 export interface SearchBarProps {
@@ -37,17 +36,11 @@ export interface SearchFilterProps {
   searchValue: string;
 }
 
-export interface SortFilterProps {
-  onSortChange: (sortType: string) => void;
-}
-
 export interface CategoryFilterProps {
   onCategoryChange: (category: string) => void;
 }
 
-//
 
-// carrinho
 
 export interface CardProps extends Product {
   addToCart: (product: Product) => void;
@@ -67,6 +60,12 @@ export interface CartProps {
   handlePurchase: () => void;
 }
 
+
+export interface BtnProps {
+  onOpen: () => void;
+  cartItemCount: number;
+}
+
 export interface ItemProps {
   id: string;
   name: string;
@@ -75,9 +74,4 @@ export interface ItemProps {
   image: string;
   onUpdateQuantity: (id: string, quantity: number) => void;
   onRemove: (id: string) => void;
-}
-
-export interface BtnProps {
-  onOpen: () => void;
-  cartItemCount: number;
 }

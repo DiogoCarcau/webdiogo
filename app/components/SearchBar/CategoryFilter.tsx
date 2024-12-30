@@ -16,7 +16,7 @@ export default function CategoryFilter({ onCategoryChange }: CategoryFilterProps
 
   return (
     <div className="flex flex-col">
-      <label className="text-sm font-medium text-gray-700 mb-1">
+      <label className="text-sm font-medium text-white-700 mb-1">
         Categoria
       </label>
       <select

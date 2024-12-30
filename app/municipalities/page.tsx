@@ -13,9 +13,9 @@ export default function Municipalities() {
 
     const { data: municipalities, error, isLoading } = useSWR<Municipality[], Error>('/api/municipalities', fetcher);
 
-    if (error) return <div>Failed to load</div>;
-    if (isLoading) return <div>Loading...</div>;
-    if (!municipalities) return <div>No data available</div>;
+    if (error) return <div>Failed to load ...</div>;
+    if (isLoading) return <div>Loading ...</div>;
+    if (!municipalities) return <div>Data error</div>;
 
     return (
         <div>
