@@ -1,31 +1,52 @@
-import React from "react";
-import { Product } from "../models/interface";
+import React, { useState } from "react";
+import { CardProps } from "../models/interface";
 
-export default function Card({
-  title,
-  category,
-  price,
-  description,
-  image,
-  rating,
-}: Product) {
+
+export default function Card({ addToCart, ... props }: CardProps) {
+  const [isAdded, setIsAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    addToCart(props);
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 1000);
+  };
+
   return (
-    <div className="bg-white border rounded-lg shadow-sm hover:shadow-lg transition-transform duration-200 hover:scale-105 flex flex-col p-4 space-y-4">
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-40 object-contain rounded-lg bg-gray-100 transition-transform duration-300 hover:scale-105"
-      />
-      <h2 className="text-lg font-semibold text-gray-900 truncate">{title}</h2>
-      <p className="text-sm text-gray-500">{category}</p>
-      <p className="text-sm text-gray-700 line-clamp-3">{description}</p>
-      <div className="flex justify-between items-center border-t pt-4">
-        <span className="text-lg font-bold text-gray-700">{price.toFixed(2)}€</span>
-        <div className="flex items-center text-sm text-gray-700">
-          <span>{rating.rate}⭐</span>
-          <span className="text-gray-500 ml-2">({rating.count})</span>
-        </div>
-      </div>
-    </div>
+    <section className="bg-white border rounded-xl shadow-xl hover:shadow-xl transition-transform duration-300 hover:-translate-y-2 flex flex-col">
+      <article className="overflow-hidden rounded-t-lx pt-10">
+        <img
+          src={props.image}
+          alt={props.title}
+          className="w-full h-36 object-contain"
+        />
+      </article>
+      <article className="p-4 flex-grow">
+        <h2 className="text-lg font-bold text-gray-800">
+          {props.title}
+        </h2>
+        <p className="text-sm text-blue-500 italic font-bold pb-2">
+          {props.category}
+        </p>
+        <p className="text-sm text-gray-600">
+          {props.description}
+        </p>
+      </article>
+      <article className="p-4 border-t flex justify-between items-center">
+        <span className="text-lg font-bold text-blue-600">
+          {props.price.toFixed(2)}€
+        </span>
+        <article className="text-sm text-yellow-500 flex items-center">
+          {props.rating.rate}⭐{" "}
+          <span className="text-gray-400 ml-2">({props.rating.count})</span>
+        </article>
+      </article>
+      <button
+        onClick={handleAddToCart}
+        className={`w-full py-2 rounded transition-colors duration-200 
+          bg-blue-400 hover:bg-blue-500 text-white`}
+      >
+        {isAdded ? 'Adicionado' : 'Adicionar ao Carrinho'}
+      </button>
+    </section>
   );
 }
