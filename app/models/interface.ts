@@ -18,6 +18,10 @@ export interface FilterProps {
   searchValue: string;
 }
 
+export interface SortFilterProps {
+  onSortChange: (sortType: string) => void;
+}
+
 export interface Tecnologia {
   id: number;
   title: string;
