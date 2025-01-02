@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { CardProps } from "../models/interface";
+import { SortFilterProps } from "../models/interface";
+
 
 
 export default function Card({ addToCart, ... props }: CardProps) {
