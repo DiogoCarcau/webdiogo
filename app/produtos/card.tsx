@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CardProps } from "../models/interface";
-import { SortFilterProps } from "../models/interface";
+
 
 
 
